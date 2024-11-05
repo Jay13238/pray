@@ -19,6 +19,7 @@ module.exports = defineConfig({
 
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "false",
+    backendUrl: process.env.MEDUSA_BACKEND_URL,
   },
 
   modules: [
@@ -28,7 +29,7 @@ module.exports = defineConfig({
         redisUrl: process.env.REDIS_URL,
       },
     },
-    
+
     {
       resolve: "@medusajs/medusa/event-bus-redis",
       options: {
